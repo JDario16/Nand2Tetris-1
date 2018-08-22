@@ -1,0 +1,22 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/03/a/Bit.hdl
+
+/**
+ * 1-bit register:
+ * If load[t] == 1 then out[t+1] = in[t]
+ *                 else out does not change (out[t+1] = out[t])
+ */
+
+CHIP Bit {
+    IN in, load;
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+    //Implementacion para el chip bit, el in entra en el pin b del mux
+    // y recibe el resultado del flipflop, a su vez el flipflop espera el resultado de mux para asi sacar el dest 2 y el out del chip
+    Mux(a=dest2,b=in,sel=load,out=outt);
+    DFF(in=outt,out=dest2,out=out);
+}

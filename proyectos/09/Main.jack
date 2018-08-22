@@ -1,0 +1,15 @@
+class Main{
+  function void main(){
+    var int discos;
+    var Hanoi torresDeHanoi;
+    let discos = -1;
+    while((discos<0)|(discos>10)){
+      let discos = Keyboard.readInt("Entre el numero de discos entre 1 y 10, 0 acaba el programa");
+    }
+    if((discos > 0)&(discos < 11)){
+      let torresDeHanoi = Hanoi.new(discos);
+      do torresDeHanoi.empezar();
+    }
+    return;
+  }
+}
